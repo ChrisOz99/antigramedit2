@@ -1,0 +1,43 @@
+
+{
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA23A0zh4Dad9dXu87pK2zcdx/J6HS8LWvBIbbZ1CLxVNlQit0ZoxYqqHGSbnneM0iibJrYLGjN+l65zA1kQSPgNeov4PRxYXC2dRpGUCrmEF07rUmVynTOgrg0ZwTgbbQ7/5Ug8NuvbJbFqWK3xyzHPqGSY3cofZFmJ9rYQp5IdCtm0H0zoOzkfiqbPrYwZi3EAO3bv//G9zJVFTuvAkOysraEEJR1JrjaLHUhPjvoQRW68+i3FM1ujMdBEtl2YS+/b2hpXlKyuYe2+im2bTKox3qXZu27N+OxQzGD5/HRBjs+rBQDbICg7fdj1x4pHCDFoajiDlEj+hBiMfi+8AiFwIDAQAB",
+  "manifest_version": 3,
+  "name": "Antigram - Explore & Reels Blocker",
+  "description": "Browser extension to fight back Instagram's addictive features.",
+  "version": "2.1.1",
+  "author": "aymyo",
+  "icons": {
+    "16": "public/ag16.png",
+    "32": "public/ag32.png",
+    "48": "public/ag48.png",
+    "128": "public/ag128.png"
+  },
+
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*", "https://instagram.com/*", "https://www.youtube.com/*", "https://youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js", "modules/main.js", "modules/lib.js"],
+      "matches": ["https://*.instagram.com/*", "https://instagram.com/*", "https://www.youtube.com/*", "https://youtube.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+
+  "action": {
+    "default_title": "Antigram",
+    "default_icon": {
+      "16": "public/ag16.png",
+      "32": "public/ag32.png",
+      "48": "public/ag48.png",
+      "128": "public/ag128.png"
+    }
+  }
+}
